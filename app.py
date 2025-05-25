@@ -54,10 +54,16 @@ st.code(word_example)
 ### 教科書名などのタイトルを入力してwordファイルをアップロードします
 '''
 
-title = st.text_input("タイトル")
+title = st.text_input("タイトル", value="CT診断一問一答")
 
-uploaded_files = st.file_uploader(
-    "wordファイルをアップロード", type="docx", accept_multiple_files=True)
+word_tab, text_tab = st.tabs(["word", "text"])
+
+with word_tab:
+    uploaded_files = st.file_uploader(
+        "wordファイルをアップロード", type="docx", accept_multiple_files=True)
+
+with text_tab:
+    text = st.text_area("textでデータ入力")
 
 if st.button("実行"):
     if not title:
