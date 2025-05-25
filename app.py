@@ -56,14 +56,8 @@ st.code(word_example)
 
 title = st.text_input("タイトル", value="CT診断一問一答")
 
-word_tab, text_tab = st.tabs(["word", "text"])
-
-with word_tab:
-    uploaded_files = st.file_uploader(
-        "wordファイルをアップロード", type="docx", accept_multiple_files=True)
-
-with text_tab:
-    text = st.text_area("textでデータ入力")
+uploaded_files = st.file_uploader(
+    "wordファイルをアップロード", type="docx", accept_multiple_files=True)
 
 if st.button("実行"):
     if not title:
