@@ -54,7 +54,7 @@ st.code(word_example)
 ### 教科書名などのタイトルを入力してwordファイルをアップロードします
 '''
 
-title = st.text_input("タイトル", value="CT診断一問一答")
+title = st.text_input("タイトル", value="一目でわかるMRI超ベーシック")
 
 uploaded_files = st.file_uploader(
     "wordファイルをアップロード", type="docx", accept_multiple_files=True)
